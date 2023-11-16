@@ -1,0 +1,198 @@
+:root {
+  --github-color: #333;
+  --linkedin-color: #0077b5;
+  --email-color: #db4437;
+  --cv-color: #0f9d58;
+  --button-spacing: 10px;
+}
+
+.profilePic {
+  border-radius: 1.3rem;
+  border: 3px solid #6c5f5b; /* A solid border, color can be adjusted */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
+  object-fit: cover; /* Ensures the image is well-fitted into the container */
+  width: 90%;
+  height: 90%;
+  color: var(--theme-color1);
+}
+
+.profilePic:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover for a 'lifting' effect */
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: #28a745;
+  background-color: white; /* Green background */
+  border-radius: 1em;
+  margin-bottom: 1em; /* To give some space between the title and the badge */
+  cursor: pointer;
+  vertical-align: middle; /* Align with the logo text if necessary */
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+.status-badge:before {
+  content: '';
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  background-color: #28a745; /* White dot */
+  border-radius: 50%;
+  margin-right: 0.5em;
+}
+
+.home-container {
+  width: 100%;
+  height: 100%;
+  min-height: 90vh;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  /* border-bottom: 1px solid rgb(229, 214, 214); */
+}
+
+.home-container .content {
+  width: 100%;
+  padding: 0 1rem;
+  padding-bottom: 250px;
+}
+
+.content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.content p {
+  display: block;
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  padding: 0 1rem;
+  color: rgb(97, 89, 89);
+  align-items: center;
+}
+
+/* Button Styles */
+.buttons-parent-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This centers the button-container divs horizontally */
+  justify-content: center; /* This centers the button-container divs vertically */
+}
+
+/* Button container for each row of buttons */
+.button-container {
+  display: grid;
+  grid-template-columns: repeat(1, auto); /* Creates two columns */
+  gap: var(
+    --button-spacing
+  ); /* Space between buttons, as defined in your :root */
+  margin-left: auto; /* This will push the button container to the right */
+  margin-right: auto; /* This will push the button container to the left */
+  justify-content: center; /* Aligns the content to the start (left) */
+}
+
+.button {
+  background-color: var(--button-bg-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem; /* Space between icon and text */
+  text-decoration: none; /* Removes underline from anchor tags if using <a> */
+  transition: background-color 0.3s ease;
+}
+
+/* Specific button colors */
+.button.github {
+  background-color: var(--github-color);
+}
+
+.button.linkedin {
+  background-color: var(--linkedin-color);
+}
+
+.button.email {
+  background-color: var(--email-color);
+}
+
+.button.cv {
+  background-color: var(--cv-color);
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+/* Medium */
+@media screen and (min-width: 481px) {
+}
+
+/* Large */
+@media screen and (min-width: 900px) {
+  .home-container {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+    padding: 0 2rem;
+  }
+
+  .home-container .svg {
+    display: block !important;
+    width: 90%;
+    height: 90%;
+  }
+
+  .svg img {
+    width: 100%;
+    height: 100%;
+    color: var(--theme-color1);
+  }
+
+  .home-container .content {
+    padding: 0 1rem;
+    text-align: left;
+  }
+
+  .content h1 {
+    font-size: 4rem;
+  }
+
+  .content p {
+    padding: 0;
+    width: 30rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .button-container {
+    grid-template-columns: repeat(2, auto); /* Creates two columns */
+    padding-left: 0;
+    margin-left: 0;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .button {
+    min-width: 250px !important;
+  }
+}
+
+/* Extra Large */
+@media screen and (min-width: 1025) {
+}
+
+/* XXL */
+@media screen and (min-width: 1201) {
+}

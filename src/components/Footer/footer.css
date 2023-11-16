@@ -1,0 +1,31 @@
+.footer-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  padding: 30px;
+  color: gray;
+  border-top: 1px solid rgb(210, 196, 196);
+}
+.social-section {
+  display: flex;
+}
+.icons {
+  color: var(--theme-color1) !important;
+  width: 30px;
+  height: 30px;
+  padding: 4px;
+}
+
+/* Large */
+@media screen and (max-width: 600px) {
+  .footer-container {
+    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    justify-content: center;
+    padding: 0.5rem 2rem;
+  }
+}
