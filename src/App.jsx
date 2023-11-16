@@ -1,5 +1,4 @@
 import React from "react"
-import { BrowserRouter } from 'react-router-dom';
 
 // Components
 import Nav from "components/Nav/Nav"
@@ -11,7 +10,6 @@ import Footer from "components/Footer/Footer"
 
 function App() {
   return (
-    <BrowserRouter>
       <div className="app-container">
         <Nav />
         <Home />
@@ -20,7 +18,6 @@ function App() {
         <Contact />
         <Footer />
       </div>
-    </BrowserRouter>
   )
 }
 

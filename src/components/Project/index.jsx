@@ -16,56 +16,53 @@ import aqualityProjectImg from "images/projects/aquality-project-bg.jpg"
 import dBankProjectImg from "images/projects/dbank-project-bg.png"
 import xmasProjectImg from "images/projects/xmas-project-bg.jpeg"
 
+const hardcodedData = [
+  {
+    category: "IoT",
+    title: "Aquality 2.0",
+    tagline: "DkIT Final Year Project",
+    repositoryUrl: "https://github.com/cWenyu/CCCMI",
+    liveUrl: "https://mahara.dkit.ie/view/view.php?id=84850",
+    img: { asset: { url: aqualityProjectImg } }
+  },
+  {
+    category: "Web",
+    title: "Xmas Trip 2021",
+    tagline: "",
+    repositoryUrl: "https://github.com/BryanLiow/XmasTrip",
+    liveUrl: "https://xmas-trip.netlify.app/",
+    img: { asset: { url: xmasProjectImg } }
+  },
+  {
+    category: "Web 3.0",
+    title: "Dencentralised Bank Calculator",
+    tagline: "A dencentralised application hosted on Internet Computer network.",
+    repositoryUrl: "https://github.com/BryanLiow/DeFiBankBalancer",
+    liveUrl: "",
+    img: { asset: { url: dBankProjectImg } }
+  },
+];
+
 const Project = () => {
   const [selected, setSelected] = useState("All");
   const [data, setData] = useState([]);
-
-  // Hardcoded data for project items
-  const hardcodedData = [
-    {
-      category: "IoT",
-      title: "Aquality 2.0",
-      tagline: "DkIT Final Year Project",
-      repositoryUrl: "https://github.com/cWenyu/CCCMI",
-      liveUrl: "https://mahara.dkit.ie/view/view.php?id=84850",
-      img: { asset: { url: aqualityProjectImg } }
-    },
-    {
-      category: "Web",
-      title: "Xmas Trip 2021",
-      tagline: "",
-      repositoryUrl: "https://github.com/BryanLiow/XmasTrip",
-      liveUrl: "https://xmas-trip.netlify.app/",
-      img: { asset: { url: xmasProjectImg } }
-    },
-    {
-      category: "Web 3.0",
-      title: "Dencentralised Bank Calculator",
-      tagline: "A dencentralised application hosted on Internet Computer network.",
-      repositoryUrl: "https://github.com/BryanLiow/DeFiBankBalancer",
-      liveUrl: "",
-      img: { asset: { url: dBankProjectImg } }
-    },
-  ];
 
   // Categories for filter buttons
   const projectList = [
     "All",
     "IoT",
     "Web",
-    "Web 3.0",
-    // "other",
-    // "all"
+    "Web 3.0"
   ];
 
   useEffect(() => {
     // Filter projects based on the selected category
-    if (selected === "All") {
-      setData(hardcodedData);
-    } else {
-      setData(hardcodedData.filter(project => project.category === selected));
-    }
-  }, [selected, hardcodedData]);
+    const filteredData = selected === "All" 
+      ? hardcodedData 
+      : hardcodedData.filter(project => project.category === selected);
+
+    setData(filteredData);
+  }, [selected]); // Removed hardcodedData from dependencies
 
   return (
     <section
@@ -96,7 +93,7 @@ const Project = () => {
                 <p>{item.tagline}</p>
               </div>
               <div className="right">
-                {item.repositoryUrl.length > 0 && <a href={item.repositoryUrl}>
+                {item.repositoryUrl.length > 0 && <a href={item.repositoryUrl} target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon
                     icon={faGithubSquare}
                     size="2x"
@@ -105,12 +102,7 @@ const Project = () => {
                     title="Github Repo"
                   />
                 </a>}
-
-                {item.liveUrl.length > 0 && <a
-                  href={item.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                {item.liveUrl.length > 0 && <a href={item.liveUrl} target="_blank" rel="noopener noreferrer">
                   <FontAwesomeIcon
                     icon={faExternalLinkSquareAlt}
                     size="2x"
