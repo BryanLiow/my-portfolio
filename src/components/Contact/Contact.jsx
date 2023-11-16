@@ -8,7 +8,6 @@ import "./contact.css";
 import emailjs from "emailjs-com";
 
 // image
-import contact from "../../images/contact.png";
 import emailMessage from "../../images/emailMessage.png";
 
 // Components

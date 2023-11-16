@@ -56,7 +56,7 @@ const Home = () => {
     return () => {
       clearTimeout(timeoutId);
     };
-  }, []); // Empty dependency array to run only once on mount
+  }, [setResult1, setResult2]); // Empty dependency array to run only once on mount
 
   return (
     <section className="home-container" id="home">

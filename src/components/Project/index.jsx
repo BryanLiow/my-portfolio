@@ -10,7 +10,6 @@ import { Heading } from "components/Heading/Heading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faExternalLinkSquareAlt } from "@fortawesome/free-solid-svg-icons/faExternalLinkSquareAlt";
 import { faGithubSquare } from "@fortawesome/free-brands-svg-icons/faGithubSquare";
-import { faUserLock } from "@fortawesome/free-solid-svg-icons/faUserLock";
 
 import ProjectItem from "./ProjectItem/ProjectItem";
 import aqualityProjectImg from "images/projects/aquality-project-bg.jpg"
@@ -66,7 +65,7 @@ const Project = () => {
     } else {
       setData(hardcodedData.filter(project => project.category === selected));
     }
-  }, [selected]);
+  }, [selected, hardcodedData]);
 
   return (
     <section
