@@ -90,7 +90,7 @@
 /* Button container for each row of buttons */
 .button-container {
   display: grid;
-  grid-template-columns: repeat(1, auto); /* Creates two columns */
+  grid-template-columns: repeat(2, auto); /* Creates two columns */
   gap: var(
     --button-spacing
   ); /* Space between buttons, as defined in your :root */
