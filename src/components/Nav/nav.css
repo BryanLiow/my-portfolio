@@ -1,41 +1,11 @@
-/* Nav */
-.nav-link {
-  padding: 5px 10px; /* Adjust as needed */
-  position: relative; /* Needed to position the ::after pseudo-element */
-  display: inline-block; /* Allows the use of padding and applies height and width */
-  font-size: 15px;
-  color: var(--theme-color1);
-  text-decoration: none; /* Removes default underline from links */
-  overflow: hidden; /* Ensures the underline doesn't go outside the element's box */
-  transition: color 0.2s ease; /* Smooth color transition on hover */
+/* Reset margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0; /* Underline width starts at 0 and will transition to 100% on hover */
-  height: 2px; /* Underline thickness */
-  background-color:var(--theme-color1); /* Color for the underline */
-  transition: width 0.3s ease; /* Transition for the underline effect */
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%; /* Underline width transitions to 100% on hover or if active */
-}
-
-.nav-link.active {
-  font-weight: 700;
-  color: #f6f1ee; /* Optionally change the text color */
-}
-
-.nav-link:hover,
-.nav-link.active {
-  font-size: 1.1rem; /* This will make the text larger on hover and when active */
-}
-
+/* Nav wrapper */
 .nav-wrapper {
   width: 100%;
   height: 9vh;
@@ -45,138 +15,191 @@
   position: fixed;
   top: 0;
   left: 0;
-  transition: all 1s ease;
-  background: #6c5f5b;
-  z-index: 3;
+  background: var(--theme-color2);
+  z-index: 1000; /* High z-index to ensure nav is above other content */
 }
 
+/* Nav container */
 .nav-container {
   z-index: 3;
   display: flex;
-  flex-direction: row;
-  padding: 1.5rem 1.1rem;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
-  height: 100%;
-  margin: 0 auto;
   max-width: 1200px;
+  padding: 0 20px;
 }
 
-.white {
-  color: white;
-}
-
+/* Logo */
 .logo {
-  font-family: "Acme", sans-serif !important;
+  font-family: "Acme", sans-serif;
   font-size: 1.9rem;
-  font-weight: bold; /* Adding weight to the font */
+  font-weight: bold;
   color: var(--theme-color1);
   cursor: pointer;
-  text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5); /* Enhanced shadow for depth */
-  transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for hover effect */
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
 }
 
 .logo:hover {
   transform: scale(1.05);
-  color: var(--theme-color1);
 }
 
-.link {
-  list-style-type: none;
-  float: left;
-}
-
-.nav-links {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  min-height: 150px;
-  position: absolute;
-  top: 9vh;
-  text-align: center;
-  align-items: center;
-  left: -110%;
-  opacity: 1;
-  transition: all 0.5s ease;
-}
-
-.nav-links {
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  letter-spacing: 0.7px;
-  font-weight: 550;
-  line-height: 2rem;
-  border-bottom: 3px solid transparent;
-  border-radius: 2px;
-  transition: all 0.3s ease;
-  margin: 0.8rem;
-}
-
-/* ? Animation */
+/* Menu icon for small screens */
 .menu-icon {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 22px;
-  height: 18.5px;
+  display: none;
   cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  outline: none;
+  z-index: 5; /* Ensures it's clickable above other elements */
 }
 
 .menu-icon span {
+  display: block;
   width: 100%;
   height: 3px;
-  background-color: black;
-  transform-origin: left;
-  transition: all 2s ease;
-}
-
-.nav-wrapper.menuActive {
   background-color: var(--theme-color1);
+  transition: all 0.3s ease;
 }
 
-.logo.menuActive {
-  color: white;
+/* Close icon within the side menu */
+.close-icon {
+  position: absolute;
+  top: 0; /* Position at the top of the side menu */
+  right: 0; /* Position at the right of the side menu */
+  padding: 15px; /* Padding to increase touch area */
+  z-index: 5; /* Ensures it's clickable above other elements */
+  font-size: 24px; /* Size of the close icon */
+  color: var(--theme-color2);
+  cursor: pointer; /* Changes cursor to pointer on hover */
 }
 
-.menu-icon span.menuActive {
-  background-color: white;
+/* Nav links for large screens */
+.nav-link-outer {
+  padding: 5px 10px;
+  font-size: 15px;
+  color: var(--theme-color1);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  position: relative; /* Required for after pseudo-element positioning */
 }
 
-/* Lines */
-.line1.menuActive {
-  transform: rotate(45deg);
+.nav-link-outer:hover,
+.nav-link-outer.active {
+  color: #f6f1ee;
 }
 
-.line2.menuActive {
-  opacity: 0;
+.nav-link-outer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--theme-color1);
+  transition: width 0.3s ease;
 }
 
-.line3.menuActive {
-  transform: rotate(-45deg);
+.nav-link-outer:hover::after,
+.nav-link-outer.active::after {
+  width: 100%;
 }
 
-/** Media Query */
+/* Side menu nav links for small screens */
+.nav-links-inner {
+  display: none; /* Hidden by default */
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  top: 9vh; /* Height of the nav-wrapper */
+  right: -250px; /* Start off-screen */
+  height: calc(
+    100vh - 9vh
+  ); /* Full height minus the height of the nav-wrapper */
+  width: 250px; /* Width of the side menu */
+  background: var(--theme-color1);
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.5s ease;
+  z-index: 5;
+  padding-top: 45px; /* Space for the close icon */
+}
+
+.nav-link-inner-container {
+  border-top: 1px solid var(--theme-color2);
+  margin-top: 15px;
+}
+
+.nav-links-inner.menuActive {
+  top: 0;
+  right: 0; /* Bring onto the screen */
+  height: 100vh;
+}
+
+.nav-link-inner {
+  color: var(--theme-color2);
+  text-decoration: none;
+  display: block; /* Stack vertically */
+  width: 100%;
+  padding: 20px 0;
+  font-size: 18px;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.nav-link-inner:hover,
+.nav-link-inner.active {
+  color: var(--theme-color1);
+  background-color: var(--theme-color2);
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+/* Media Queries */
+/* Larger screens */
 @media screen and (min-width: 600px) {
-  .logo {
-    font-size: 2.1rem;
+  .nav-container {
+    flex-direction: row;
+  }
+
+  .nav-link-outer {
+    margin: 0 15px; /* Spacing between links */
+  }
+
+  .menu-icon,
+  .nav-links-inner {
+    display: none; /* Hide menu icon and inner links */
+  }
+
+  .nav-links-outer {
+    display: flex;
+    align-items: center;
+  }
+}
+
+/* Smaller screens */
+@media screen and (max-width: 599px) {
+  .nav-container {
+    justify-content: space-between;
   }
 
   .menu-icon {
-    width: 27px;
-    height: 20.5px;
+    display: flex; /* Show the menu icon */
   }
 
-  .menu-icon span {
-    height: 3px;
+  .nav-links-outer {
+    display: none; /* Hide the outer links */
   }
-}
 
-@media screen and (min-width: 950px) {
-  .logo {
-    font-size: 2.3rem;
+  .nav-links-inner {
+    display: none; /* Keep the inner links hidden until activated */
+  }
+
+  .nav-links-inner.menuActive {
+    display: flex; /* Show the inner links when active */
   }
 }
