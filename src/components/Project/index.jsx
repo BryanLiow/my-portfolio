@@ -15,6 +15,7 @@ import ProjectItem from "./ProjectItem/ProjectItem";
 import aqualityProjectImg from "images/projects/aquality-project-bg.jpg"
 import dBankProjectImg from "images/projects/dbank-project-bg.png"
 import xmasProjectImg from "images/projects/xmas-project-bg.jpeg"
+import triptalkProjectImg from "images/projects/triptalk-project-bg.webp"
 
 const hardcodedData = [
   {
@@ -40,6 +41,22 @@ const hardcodedData = [
     repositoryUrl: "https://github.com/BryanLiow/DeFiBankBalancer",
     liveUrl: "",
     img: { asset: { url: dBankProjectImg } }
+  }, 
+  {
+    category: "Web",
+    title: "Triptalk- Next.js",
+    tagline: "Frontend of a social media platform for sharing travel posts, built with Next.js and styled using Tailwind CSS.",
+    repositoryUrl: "https://github.com/BryanLiow/travel_app",
+    liveUrl: "",
+    img: { asset: { url: triptalkProjectImg } }
+  },
+  {
+    category: "Web",
+    title: "Triptalk- Laravel",
+    tagline: "Backend API for a travel post-sharing social media platform, developed using Laravel.",
+    repositoryUrl: "https://github.com/BryanLiow/laravel_travel_app",
+    liveUrl: "",
+    img: { asset: { url: triptalkProjectImg } }
   },
 ];
 
@@ -57,8 +74,8 @@ const Project = () => {
 
   useEffect(() => {
     // Filter projects based on the selected category
-    const filteredData = selected === "All" 
-      ? hardcodedData 
+    const filteredData = selected === "All"
+      ? hardcodedData
       : hardcodedData.filter(project => project.category === selected);
 
     setData(filteredData);
