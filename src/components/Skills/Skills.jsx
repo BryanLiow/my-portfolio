@@ -1,5 +1,5 @@
 import React from "react";
-import { faCode, faGlobe, faNetworkWired, faDatabase,faTools } from '@fortawesome/free-solid-svg-icons';
+import { faCode, faGlobe, faNetworkWired, faDatabase,faTools, faCloud } from '@fortawesome/free-solid-svg-icons';
 
 // Styles
 import "./skills.css";
@@ -29,6 +29,11 @@ const Skills = () => {
       title: "Databases",
       icon: faDatabase, // replace with the appropriate icon
       tags: ["PostgreSQL", "MySQL", "MongoDB"]
+    },
+    {
+      title: "Cloud Computing Platforms",
+      icon: faCloud, // replace with the appropriate icon
+      tags: ["AWS"]
     },
     {
       title: "Others",
