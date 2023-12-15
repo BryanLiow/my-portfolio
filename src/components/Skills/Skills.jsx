@@ -16,9 +16,9 @@ const Skills = () => {
       tags: ["JavaScript", "Python", "Java", "TypeScript", "C++", "PHP", "Kotlin"]
     },
     {
-      title: "Web 2.0",
+      title: "Frameworks & Libraries",
       icon: faGlobe, // replace with the appropriate icon
-      tags: ["HTML5", "CSS3", "Bootstrap", "jQuery", "Laravel", "React", "Node.js", "Express.js", "Yii2"]
+      tags: ["HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "jQuery", "React.js", "React Native", "Next.js", "Node.js", "Express.js", "Laravel", "Yii2"]
     },
     {
       title: "Web 3.0",
