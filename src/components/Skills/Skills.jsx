@@ -13,12 +13,12 @@ const Skills = () => {
     {
       title: "Languages",
       icon: faCode, // replace with the appropriate icon
-      tags: ["JavaScript", "Python", "Java", "TypeScript", "C++", "PHP", "Kotlin"]
+      tags: ["JavaScript", "Python", "Java", "TypeScript", "C++", "PHP", "Kotlin", "HTML", "CSS"]
     },
     {
       title: "Frameworks & Libraries",
       icon: faGlobe, // replace with the appropriate icon
-      tags: ["HTML5", "CSS3", "Tailwind CSS", "Bootstrap", "jQuery", "React.js", "React Native", "Next.js", "Node.js", "Express.js", "Laravel", "Yii2"]
+      tags: ["Tailwind CSS", "Bootstrap", "jQuery", "React.js", "React Native", "Next.js", "Node.js", "Express.js", "Laravel", "Yii2"]
     },
     {
       title: "Web 3.0",
