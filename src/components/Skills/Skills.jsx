@@ -33,7 +33,7 @@ const Skills = () => {
     {
       title: "Cloud Computing Platforms",
       icon: faCloud, // replace with the appropriate icon
-      tags: ["AWS"]
+      tags: ["AWS Certified Cloud Practitioner (CLF-C02)"]
     },
     {
       title: "Others",
