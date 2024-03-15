@@ -5,7 +5,7 @@ import { useDencrypt } from "use-dencrypt-effect";
 import Typed from "react-typed"
 
 import portfolioProfilePic from "images/portfolio-profile-pic.jpg"
-import cv from "docs/BryanZeYanLiow_CV.pdf";
+import cv from "docs/ZeYanLiow_CV.pdf";
 
 
 // Material UI Icons
